@@ -1,15 +1,28 @@
-# Pilot Ground School ✈️
+# Take Me to the Clouds ✈️
 
-A tiny browser-based ground-school trainer that grows with the lessons.
+A tiny browser-based ground-school trainer, lesson notebook, and virtual flight log that grows with the lessons.
 
-## v0.1
+## v0.2
 - Stall / AoA
 - Turns and load factor
-- Fog basics
-- Cloud-base estimation
+- Fog and cloud-base estimation
 - METAR basics
-- Wind, ceiling, Zulu time and altimeter setting
+- Randomized gust-factor and cloud-base questions
+- Class E chart cues
+- Class B/C altitude labels and wedding-cake structure
+- VFR weather minimums: Class B, 3-152, 5-111, low Class G
+- Visual airspace questions
+- Personalized **My Common Traps** corner
+- Export quiz attempts as JSON
+- Virtual Flight Log + reserved Real Discovery Flight mission
 
-Open `index.html` in a browser to practice.
+Open `index.html` in a browser or publish the branch with GitHub Pages.
 
-> Educational study aid only. It does not replace instruction from a qualified flight instructor or official FAA weather/flight-planning sources.
+## Notes
+- `LESSON_NOTES.md` — structured lesson notes and FAA references
+- `COMMON_TRAPS.md` — personalized recurring-error tracker
+- `LEARNING_PROGRESS.md` — current progress and next lessons
+- `FLIGHT_LOG.md` — virtual / future real fly-out log
+- `assets/lessons/class-b-wedding-cake.svg` — reusable teaching diagram
+
+> Educational study aid only. It does not replace instruction from a qualified flight instructor, current FAA charts/regulations, official weather/NOTAM sources, or PIC judgment.

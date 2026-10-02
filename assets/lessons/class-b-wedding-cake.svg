@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+<title id="title">Class B upside-down wedding cake schematic</title>
+<desc id="desc">Side-view schematic showing a surface core, two higher outer shelves, Class E above, Class A beginning at 18,000 feet MSL, arrival traffic descending toward the primary airport, and a small VFR aircraft passing below an outer shelf.</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dceef8"/><stop offset="1" stop-color="#f8fbfd"/></linearGradient>
+  <linearGradient id="bfill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7ebbe1" stop-opacity=".30"/><stop offset=".5" stop-color="#4d9fd3" stop-opacity=".50"/><stop offset="1" stop-color="#7ebbe1" stop-opacity=".30"/></linearGradient>
+</defs>
+<rect width="1000" height="430" rx="22" fill="url(#sky)"/>
+<text x="36" y="42" font-family="system-ui,sans-serif" font-size="25" font-weight="700" fill="#17212b">Class B — upside-down wedding cake</text>
+<text x="36" y="68" font-family="system-ui,sans-serif" font-size="14" fill="#66727f">schematic · not to scale · example altitudes only</text>
+
+<line x1="50" y1="118" x2="950" y2="118" stroke="#73808b" stroke-width="2" stroke-dasharray="8 7"/>
+<text x="58" y="106" font-family="system-ui,sans-serif" font-size="14" fill="#44515d">18,000 ft MSL → Class A begins</text>
+<text x="790" y="103" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#334b5a">Class A</text>
+
+<text x="80" y="154" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#334b5a">Class E above Class B</text>
+
+<path d="M150 190 H850 V245 H730 V298 H615 V365 H385 V298 H270 V245 H150 Z" fill="url(#bfill)" stroke="#1e5a7a" stroke-width="3"/>
+<line x1="150" y1="245" x2="850" y2="245" stroke="#1e5a7a" stroke-width="1.5" opacity=".55"/>
+<line x1="270" y1="298" x2="730" y2="298" stroke="#1e5a7a" stroke-width="1.5" opacity=".55"/>
+
+<text x="500" y="222" text-anchor="middle" font-family="system-ui,sans-serif" font-size="19" font-weight="700" fill="#173f58">outer shelf · 100 / 60</text>
+<text x="500" y="277" text-anchor="middle" font-family="system-ui,sans-serif" font-size="19" font-weight="700" fill="#173f58">middle shelf · 80 / 40</text>
+<text x="500" y="334" text-anchor="middle" font-family="system-ui,sans-serif" font-size="19" font-weight="700" fill="#173f58">surface core · 40 / SFC</text>
+
+<line x1="45" y1="365" x2="955" y2="365" stroke="#37414a" stroke-width="4"/>
+<path d="M430 365 l35 -18 h70 l35 18 z" fill="#7b8790"/>
+<rect x="488" y="330" width="24" height="35" fill="#53616d"/>
+<rect x="496" y="310" width="8" height="20" fill="#53616d"/>
+<text x="500" y="402" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#17212b">PRIMARY AIRPORT</text>
+
+<path d="M900 172 C800 178 735 208 665 257 C610 295 565 318 520 340" fill="none" stroke="#b94d4d" stroke-width="4" stroke-linecap="round"/>
+<polygon points="892,164 918,172 892,180" fill="#b94d4d"/>
+<text x="720" y="177" font-family="system-ui,sans-serif" font-size="14" fill="#8b3a3a">arrival path descends toward airport</text>
+
+<path d="M110 323 C210 323 270 323 340 323" fill="none" stroke="#2e7d58" stroke-width="4" stroke-dasharray="9 7"/>
+<text x="105" y="307" font-family="system-ui,sans-serif" font-size="14" fill="#216e4a">VFR traffic can pass below shelf</text>
+<text x="340" y="329" font-size="24">✈</text>
+
+<text x="70" y="390" font-family="system-ui,sans-serif" font-size="13" fill="#66727f">lower airspace remains Class E/G as charted — shelf geometry does not remove normal rules</text>
+</svg>
