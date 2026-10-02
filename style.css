@@ -2,37 +2,68 @@
   --bg:#eef2f5;--panel:#ffffff;--ink:#17212b;--muted:#66727f;--line:#d9e0e6;
   --accent:#1e5a7a;--accent2:#dbeaf2;--good:#216e4a;--bad:#9d2c2c;
 }
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);
-font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-.shell{max-width:900px;margin:0 auto;padding:28px 16px 48px}
-.hero,.scoreline{display:flex;justify-content:space-between;gap:20px;align-items:center}
-h1{font-size:clamp(30px,6vw,54px);margin:.15em 0} h2{margin:.2em 0 .5em}
-.sub,.eyebrow,footer{color:var(--muted)} .eyebrow{letter-spacing:.14em;font-size:12px;font-weight:700}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.shell{max-width:920px;margin:0 auto;padding:28px 16px 48px}
+.hero,.scoreline,.section-head,.flightlog-head{display:flex;justify-content:space-between;gap:20px;align-items:center}
+h1{font-size:clamp(30px,6vw,54px);margin:.15em 0} h2{margin:.2em 0 .5em} h3{margin:.25em 0 .5em}
+p{line-height:1.65}
+.sub,.eyebrow,footer{color:var(--muted)}
+.eyebrow{letter-spacing:.14em;font-size:12px;font-weight:700;margin:0 0 6px}
 .badge{border:1px solid var(--line);padding:10px 14px;border-radius:999px;background:#f9fbfc;font-size:13px}
-.panel,.question{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:18px;
-box-shadow:0 8px 30px rgba(18,36,50,.05)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px}.chips span{background:var(--accent2);padding:7px 10px;border-radius:999px;font-size:13px}
-button{border:0;background:var(--accent);color:white;font-weight:700;padding:12px 18px;border-radius:12px;cursor:pointer}
-button:hover{filter:brightness(.96)} .hidden{display:none!important}
-.question h3{margin-top:0}.option{display:block;border:1px solid var(--line);padding:11px 12px;border-radius:10px;margin:9px 0;cursor:pointer}
+.panel,.question{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:18px;box-shadow:0 8px 30px rgba(18,36,50,.05)}
+.chips,.actions,.flight-meta{display:flex;flex-wrap:wrap;gap:8px}
+.chips{margin:16px 0 22px}
+.chips span{background:var(--accent2);padding:7px 10px;border-radius:999px;font-size:13px}
+button{border:0;background:var(--accent);color:white;font-weight:700;padding:12px 18px;border-radius:12px;cursor:pointer;min-height:44px}
+button:hover{filter:brightness(.96)}
+button.secondary{background:#f6f9fb;color:var(--accent);border:1px solid var(--line)}
+.hidden{display:none!important}
+.question h3{margin-top:0}
+.option{display:block;border:1px solid var(--line);padding:11px 12px;border-radius:10px;margin:9px 0;cursor:pointer}
 .option:hover{background:#f7fafc}.option input{margin-right:9px}
-.meta{font-size:12px;color:var(--muted);margin-bottom:8px}.explain{margin-top:10px;padding:10px 12px;border-left:4px solid var(--accent);background:#f6f9fb}
+.meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+.explain{margin-top:10px;padding:10px 12px;border-left:4px solid var(--accent);background:#f6f9fb;line-height:1.6}
 .correct{color:var(--good);font-weight:700}.wrong{color:var(--bad);font-weight:700}.reward{font-size:22px}
+.question-visual{margin:14px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#f8fbfd}
+.question-visual svg{width:100%;height:auto;display:block}
 footer{text-align:center;margin-top:28px;font-size:12px}
-@media(max-width:620px){.hero,.scoreline{align-items:flex-start;flex-direction:column}.badge{display:none}}
 
+.logbook-stamp{border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:11px;letter-spacing:.12em;color:var(--muted);white-space:nowrap}
+.lesson-figure{display:block;width:100%;margin:16px 0 20px;border:1px solid var(--line);border-radius:16px;background:#f7fbfd}
+.note-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.note-grid article{border:1px solid var(--line);border-radius:14px;padding:15px;background:#fbfcfd}
+.note-grid p{margin:.35em 0 0;font-size:14px}
+.source-note,.privacy-note{color:var(--muted);font-size:12px;margin:14px 0 0}
+
+.minima-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.minima-grid div{border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:5px}
+.minima-grid span{font-size:14px;color:var(--muted)}
+
+.traps summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer}
+.traps summary::-webkit-details-marker{display:none}
+.traps summary strong{display:block;font-size:20px}
+.summary-hint{font-size:12px;color:var(--muted)}
+.trap-list{display:grid;gap:9px;margin-top:18px}
+.trap-list div{border-left:4px solid var(--accent);padding:9px 12px;background:#f7fafc;border-radius:8px}
+.trap-list strong,.trap-list span{display:block}
+.trap-list span{font-size:14px;color:var(--muted);margin-top:3px}
 
 .flightlog{overflow:hidden}
-.flightlog-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:14px}
-.logbook-stamp{border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:11px;letter-spacing:.12em;color:var(--muted);white-space:nowrap}
-.flight-entry{border-top:1px solid var(--line);padding-top:18px}
+.flight-entry{border-top:1px solid var(--line);padding-top:18px;margin-top:10px}
+.flight-entry+.flight-entry{margin-top:20px}
 .flight-route{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
-.airport-code{font-size:28px;font-weight:800;letter-spacing:.06em}
+.airport-code{font-size:25px;font-weight:800;letter-spacing:.05em}
 .route-line{font-size:23px;color:var(--accent)}
 .destination{font-weight:700}
-.flight-entry h3{margin:.1em 0 .45em;font-size:22px}
-.flight-note{line-height:1.7;margin:.4em 0 1em}
-.flight-meta{display:flex;flex-wrap:wrap;gap:8px}
+.flight-note{margin:.4em 0 1em}
 .flight-meta span{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:6px 9px;background:#f9fbfc;color:var(--muted)}
-.flightlog-foot{margin:18px 0 0;padding-top:14px;border-top:1px dashed var(--line);color:var(--muted);font-size:13px;line-height:1.6}
-@media(max-width:620px){.flightlog-head{flex-direction:column}.airport-code{font-size:24px}}
+.flightlog-foot{margin:18px 0 0;padding-top:14px;border-top:1px dashed var(--line);color:var(--muted);font-size:13px}
+.mission{background:linear-gradient(90deg,#fff,#f7fbfd);border-radius:14px;padding:18px;border:1px dashed var(--line)}
+
+@media(max-width:650px){
+  .hero,.scoreline,.section-head,.flightlog-head{align-items:flex-start;flex-direction:column}
+  .badge{display:none}
+  .note-grid,.minima-grid{grid-template-columns:1fr}
+  .airport-code{font-size:22px}
+}
