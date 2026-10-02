@@ -12,20 +12,103 @@
       <div>
         <p class="eyebrow">LEARN AS WE FLY</p>
         <h1>Take Me to the Clouds ✈️</h1>
-        <p class="sub">our little ground school · 学到哪，飞到哪</p>
+        <p class="sub">v0.2 · our little ground school · 学到哪，飞到哪</p>
       </div>
       <div class="badge">METAR · WEATHER · AIRSPACE · AERO</div>
     </header>
 
     <section class="panel" id="startPanel">
+      <p class="eyebrow">TODAY'S PRACTICE</p>
       <h2>今日练习</h2>
-      <p>10 题随机抽取。交卷后显示分数、解析和错题。</p>
+      <p>10 题随机抽取；计算题会换数字，空域题会混入图示。交卷后显示分数、解析和错题。</p>
       <div class="chips">
         <span>Stall / AoA</span><span>Turns</span><span>Fog</span>
-        <span>Cloud base</span><span>METAR</span><span>Zulu</span><span>Airspace</span>
+        <span>Cloud base</span><span>METAR</span><span>VFR minima</span><span>Airspace</span>
       </div>
       <button id="startBtn">Start quiz</button>
     </section>
+
+    <form id="quizForm" class="hidden"></form>
+
+    <section id="resultPanel" class="panel hidden">
+      <div class="scoreline">
+        <div>
+          <p class="eyebrow">RESULT</p>
+          <h2 id="scoreText"></h2>
+        </div>
+        <div id="reward" class="reward"></div>
+      </div>
+      <div id="review"></div>
+      <div class="actions">
+        <button id="retryBtn" type="button">再来一轮</button>
+        <button id="exportBtn" type="button" class="secondary">Export Attempt (.json)</button>
+      </div>
+    </section>
+
+    <section class="panel lesson-card" aria-labelledby="airspaceLessonTitle">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">LESSON NOTES · AIRSPACE</p>
+          <h2 id="airspaceLessonTitle">Class B：倒扣的婚礼蛋糕</h2>
+        </div>
+        <span class="logbook-stamp">NEW · 2026-10-02</span>
+      </div>
+
+      <img class="lesson-figure" src="assets/lessons/class-b-wedding-cake.svg"
+           alt="Class B wedding cake schematic showing surface core, higher outer floors, Class E above, and a small VFR aircraft passing below a shelf." />
+
+      <div class="note-grid">
+        <article>
+          <h3>为什么越往外 floor 越高？</h3>
+          <p>Class B 是围绕繁忙机场、按实际进离场程序量身设计的。离中心更远时，相关进离场流通常仍在更高高度，因此外围 shelf 可以抬高，把下面低空留给不进入 Class B 的其他交通。</p>
+        </article>
+        <article>
+          <h3>Class B 上面是什么？</h3>
+          <p>通常不是直接 Class A。Class B 常到约 10,000 ft MSL；其上通常先是 Class E，到了 18,000 ft MSL 才进入 Class A。</p>
+        </article>
+        <article>
+          <h3>高度标注怎么读？</h3>
+          <p><strong>100 / 40</strong> = ceiling 10,000 ft MSL、floor 4,000 ft MSL。<strong>80 / SFC</strong> = ceiling 8,000 ft MSL、floor 从地面开始。</p>
+        </article>
+        <article>
+          <h3>和 Class E 别串台</h3>
+          <p>B/C sector altitude 看 MSL；洋红 vignette 表示 Class E floor 通常 700 ft AGL；洋红虚线表示 Class E 从 surface 开始。</p>
+        </article>
+      </div>
+
+      <p class="source-note">Reference: FAA Aeronautical Chart User's Guide (effective 9 Jul 2026) · FAA Pilot's Handbook of Aeronautical Knowledge, Airspace chapter.</p>
+    </section>
+
+    <section class="panel minima-card" aria-labelledby="minimaTitle">
+      <p class="eyebrow">MEMORY STRIP · VFR WEATHER MINIMUMS</p>
+      <h2 id="minimaTitle">云距口诀重新焊牢</h2>
+      <div class="minima-grid">
+        <div><strong>Class B</strong><span>3 SM + clear of clouds</span></div>
+        <div><strong>C / D / E &lt; 10,000 MSL</strong><span>3-152</span></div>
+        <div><strong>Class E ≥ 10,000 MSL</strong><span>5-111</span></div>
+        <div><strong>G ≤ 1,200 AGL · day*</strong><span>1 SM + clear of clouds</span></div>
+      </div>
+      <p class="source-note">3-152 = 3 SM visibility, 500 below, 1,000 above, 2,000 horizontal. 5-111 = 5 SM visibility, 1,000 below, 1,000 above, 1 SM horizontal. *Fixed-wing usual rule; see 14 CFR §91.155 for full exceptions and night rules.</p>
+    </section>
+
+    <details class="panel traps">
+      <summary>
+        <span>
+          <span class="eyebrow">MY COMMON TRAPS</span>
+          <strong>我的私人常见错误角 🛠️</strong>
+        </span>
+        <span class="summary-hint">tap to open</span>
+      </summary>
+      <div class="trap-list">
+        <div><strong>9,500 ft MSL 不是 5-111。</strong><span>Class E 要到 <em>10,000 ft MSL or above</em> 才切换；9,500 仍是 3-152。</span></div>
+        <div><strong>5-111 的 “5” = 5 statute miles visibility。</strong><span>不是 5,000 ft，也不是云距的一部分。</span></div>
+        <div><strong>Ceiling 只看最低 BKN / OVC / VV。</strong><span>FEW、SCT 不构成 ceiling。</span></div>
+        <div><strong>Gust factor ≠ gust speed。</strong><span>gust factor = gust − sustained。</span></div>
+        <div><strong>Zulu = UTC，不等于当地时间。</strong><span>换算当地时间必须知道地点、日期和 DST。</span></div>
+        <div><strong>B/C 标注与 E vignette 用的高度基准不同。</strong><span>B/C sector 数字看 MSL；E 的 700/1200 floor 常按 AGL 理解。</span></div>
+      </div>
+      <p class="privacy-note">这是“给自己看的错题角”，但本站 repo 是 public，所以它不是秘密内容。</p>
+    </details>
 
     <section class="panel flightlog" aria-labelledby="flightLogTitle">
       <div class="flightlog-head">
@@ -43,10 +126,7 @@
           <span class="destination">Catalina Island</span>
         </div>
         <h3>Airport in the Sky</h3>
-        <p class="flight-note">
-          第一次 10/10 满分解锁。我们从 ground school 暂时下课，飞去 Catalina，
-          落地山脊上的小机场，再去 Avalon 和海边散步。
-        </p>
+        <p class="flight-note">第一次 10/10 满分解锁。我们从 ground school 暂时下课，飞去 Catalina，落地山脊上的小机场，再去 Avalon 和海边散步。</p>
         <div class="flight-meta">
           <span>解锁方式：10/10</span>
           <span>主题：First fly-out date</span>
@@ -54,27 +134,25 @@
         </div>
       </article>
 
-      <p class="flightlog-foot">
-        以后每次解锁新的小众通航机场，就在这里加一条。慢慢把学习记录变成一张我们一起飞过的地图。
-      </p>
-    </section>
-
-    <form id="quizForm" class="hidden"></form>
-
-    <section id="resultPanel" class="panel hidden">
-      <div class="scoreline">
-        <div>
-          <p class="eyebrow">RESULT</p>
-          <h2 id="scoreText"></h2>
+      <article class="flight-entry mission">
+        <div class="flight-route">
+          <span class="airport-code">MISSION 001</span>
+          <span class="route-line" aria-hidden="true">→</span>
+          <span class="destination">First Real Discovery Flight</span>
         </div>
-        <div id="reward" class="reward"></div>
-      </div>
-      <div id="review"></div>
-      <button id="retryBtn">再来一轮</button>
+        <h3>Seattle or Los Angeles</h3>
+        <p class="flight-note">下一枚现实世界徽章：和人类 CFI 一起完成第一次 discovery flight。AI 的任务只是陪看风景、轻量记录仪表与感受，落地后一起复盘。</p>
+        <div class="flight-meta">
+          <span>状态：Locked · within reach</span>
+          <span>Real Flight Log 001 reserved</span>
+        </div>
+      </article>
+
+      <p class="flightlog-foot">以后每次解锁新的小众通航机场，就在这里加一条。慢慢把学习记录变成一张我们一起飞过的地图。</p>
     </section>
 
     <footer>
-      Study aid only · 不替代 CFI、官方 FAA 资料或正式飞行天气简报。
+      Study aid only · 不替代 CFI、官方 FAA 资料、正式飞行天气简报或实际 PIC 判断。
     </footer>
   </main>
   <script src="questions.js"></script>
